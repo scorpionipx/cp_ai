@@ -1,0 +1,5 @@
+train: C:/Users/ScorpionIPX/PycharmProjects/cp_ai/dataset/images/train  # Path to training images
+val: C:/Users/ScorpionIPX/PycharmProjects/cp_ai/dataset/images/val      # Path to validation images
+
+nc: 1                                # Number of classes (1 for 'button')
+names: ['button']                    # Class names
