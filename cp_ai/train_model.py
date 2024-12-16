@@ -5,8 +5,9 @@ from ultralytics import YOLO
 
 
 MODEL_YOLOV8X = 'yolov8x'  # requires RTX3090 or better
-TRAINING_RESOLUTION = 1024
-TRAINING_EPOCHS = 500
+MODEL_YOLOV8X_SEG = 'yolov8n-seg'  # requires RTX3090 or better
+TRAINING_RESOLUTION = 640
+TRAINING_EPOCHS = 250
 
 
 def train_model():
@@ -15,14 +16,14 @@ def train_model():
     :return:
     """
 
-    dataset_directory = Path(r'C:\Users\ScorpionIPX\PycharmProjects\cp_ai\datasets\yolo\buttons_detection\v1')
+    dataset_directory = Path(r'C:\Users\ScorpionIPX\PycharmProjects\cp_ai\datasets\yolo\pocket_segmentation')
     data_yaml = dataset_directory.joinpath('data.yaml')
 
     # Load a pre-trained YOLO model (YOLOv8n is lightweight; you can use 'yolov8s.pt_old' for larger models)
-    model = YOLO(MODEL_YOLOV8X)
+    model = YOLO(MODEL_YOLOV8X_SEG)
 
     # Train the model
-    model.train(data=data_yaml, epochs=TRAINING_EPOCHS, imgsz=TRAINING_RESOLUTION, device=0)
+    model.train(data=data_yaml, epochs=TRAINING_EPOCHS, imgsz=TRAINING_RESOLUTION, device=0, task='segment')
     print(model.device)
 
     # Validate the model

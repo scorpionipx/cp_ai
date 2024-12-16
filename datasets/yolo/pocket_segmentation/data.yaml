@@ -1,0 +1,9 @@
+train: C:\Users\ScorpionIPX\PycharmProjects\cp_ai\datasets\yolo\pocket_segmentation\train
+val: C:\Users\ScorpionIPX\PycharmProjects\cp_ai\datasets\yolo\pocket_segmentation\valid
+test: C:\Users\ScorpionIPX\PycharmProjects\cp_ai\datasets\yolo\pocket_segmentation\test
+nc: 2  # Example: 3 classes
+
+# Names of the classes
+names:
+  0: "pocket-right"
+  1: "pocket-left"

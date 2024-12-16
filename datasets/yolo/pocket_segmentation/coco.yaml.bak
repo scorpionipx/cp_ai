@@ -1,0 +1,9 @@
+train: C:\dumi\projects\labeler\coco-segmentaion\train
+val: C:\dumi\projects\labeler\coco-segmentaion\valid
+test: C:\dumi\projects\labeler\coco-segmentaion\test
+nc: 2  # Example: 3 classes
+
+# Names of the classes
+names:
+  0: "pocket-right"
+  1: "pocket-left"
